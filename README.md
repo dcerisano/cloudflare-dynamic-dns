@@ -41,3 +41,4 @@ The cron job will change the A-record to your webserver IP address on it's next 
 
 |![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/dragon-key.png)|
 **DO NOT** commit your Authorization key to GitHub - thar be dragons. If you did, **purge** the commit(s) and **change** your Authorization key.| 
+| :--- | :--- |
