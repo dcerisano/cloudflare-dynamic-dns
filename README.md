@@ -1,6 +1,4 @@
-# Cloudflare Dynamic DNS
-
-![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-dns.png)
+![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cloudflare-dns.png)
 
 Cloudflare bash DDNS scripts using CF-API v4 ***directly***. Ditch your third-party DDNS service! 
 
@@ -22,7 +20,7 @@ You need the Zone ID,  Authorization key and A-record ID for your domain.
 
 **Create** the CNAME alias (example.com --> dynamic.example.com) 
 
-![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cf.png)
+![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cf.png)
 
 **Fetch** The A-record ID with [cloudflare-dns-id.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-dns-id.sh)
 
@@ -41,4 +39,5 @@ The cron job will change the A-record to your webserver IP address on it's next 
 * If CF API v4 is deprecated. It is currently new, so should be stable for many years.
 * If api.ipify.org is deprecated. There are many others. Or use `dig` if you like.
 
-**DO NOT** commit your Authorization key to GitHub - thar be dragons. If you did, **purge** the commit(s) and **change** your Authorization key. 
+|![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/dragon-key.png)|
+**DO NOT** commit your Authorization key to GitHub - thar be dragons. If you did, **purge** the commit(s) and **change** your Authorization key.| 
