@@ -1,11 +1,11 @@
 ![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cloudflare-dns.png)
 
-Cloudflare bash DDNS scripts using CF-API v4 ***directly***. Ditch your third-party DDNS service! 
+Cloudflare DDNS bash scripts that call Cloudflare's API v4 ***directly***.
 
-My dns-o-matic account stopped working recently with ddclient.
+My third-party DDNS service stopped working recently with CF.
 It seems CF has moved to a new API (v4).
 
-The very good news is you can dump dns-o-matic and ddclient and simply run a DDNS shell script as a cron job every minute on your webserver. It calls the new CF API ***directly***.
+The very good news is you can ditch third-party DDNS and simply run a DDNS shell script as a cron job every minute on your webserver. It calls the new CF API ***directly***.
 
 This is a bare bones script that requires:
 * You have internet connectivity.
@@ -24,11 +24,10 @@ You need the Zone ID,  Authorization key and A-record ID for your domain.
 
 **Fetch** The A-record ID with [cloudflare-dns-id.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-dns-id.sh)
 
-**Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) as a cron job (as the user which runs the webserver - not root)
+**Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) as a cron job `* * * * *    /.../cloudflare-ddns.sh`
 
 **Test** by changing your A-record to a bogus IP and then deleting `/tmp/prev_ip`
 The cron job will change the A-record to your webserver IP address on it's next run.
-(Configure cron job to run the script once every minute for best results - CF updates instantly)
 
 **Marvel** at your own dynamic dns service - no more surrendering your CF Authorization key to someone else's service that can break whenever the CF API is upgraded. 
 
