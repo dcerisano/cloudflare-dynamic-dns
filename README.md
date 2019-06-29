@@ -26,7 +26,7 @@ You need the Zone ID,  Authorization key and A-record ID for your domain.
 
 **Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) as a cron job `* * * * *    /.../cloudflare-ddns.sh`
 
-**Test** by changing your A-record to a bogus IP and then deleting `/tmp/prev_ip`
+**Test** by changing your A-record to a bogus IP and then deleting `/tmp/ip-record`
 The cron job will change the A-record to your webserver IP address on it's next run.
 
 **Marvel** at your own dynamic dns service - no more surrendering your CF Authorization key to someone else's service that can break whenever the CF API is upgraded. 
