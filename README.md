@@ -29,7 +29,7 @@ You need the Zone ID,  Authorization key and A-record ID for your domain.
 **Test** by changing your A-record to a bogus IP and then deleting `/tmp/ip-record`
 The cron job will change the A-record to your webserver IP address on it's next run.
 
-**Marvel** at your own dynamic dns service - no more surrendering your CF Authorization key to someone else's service that can break whenever the CF API is upgraded. 
+**Marvel** at your own dynamic dns service - no more surrendering your CF Authorization key to a third party.
 
 **Note** that the CNAME alias masks your real IP address - a fundamental advantage of CF. Setting the A-record directly to your domain (example.com) would allow anyone to see your real IP address just by `ping example.com`. Try it!
 
