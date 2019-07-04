@@ -8,7 +8,7 @@ It seems CF has moved to a new API (v4).
 The very good news is you can ditch third-party DDNS and simply run a DDNS shell script as a cron job every minute on your webserver. It calls the new CF API ***directly***.
 
 This is a bare bones script that requires:
-* You have internet connectivity.
+* Internet connectivity is available.
 * CF API v4 service  is available
 * api.ipify.org service is available
 
