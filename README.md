@@ -38,6 +38,9 @@ The cron job will change the A-record to your webserver IP address on it's next 
 * If CF API v4 is deprecated. It is currently new, so should be stable for many years.
 * If api.ipify.org is deprecated. There are many others. Or use `dig` if you like.
 
+**TO DO**
+* Convert curl from linux bash script to other platforms.
+
 |![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/dragon-key.png)|
 **DO NOT** commit your Authorization key to GitHub - thar be dragons. Purge any such commits and change your key.| 
 | :--- | :--- |
