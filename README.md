@@ -1,6 +1,6 @@
 ![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cloudflare-dns.png)
 
-Cloudflare DDNS bash scripts that call CF-API v4 ***directly***.
+Cloudflare DDNS bash scripts that call CF-API (v4) ***directly***.
 
 My third-party DDNS service stopped working recently with CF.
 It seems CF has moved to a new API (v4).
