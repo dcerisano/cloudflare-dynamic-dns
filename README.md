@@ -31,7 +31,7 @@ The cron job will change the A-record to your webserver IP address on it's next 
 
 **Marvel** at your own dynamic dns service - no more surrendering your CF Authorization key to a third party DDNS service.
 
-**Note** that the CNAME alias masks your real IP address - a fundamental advantage of CF. Setting the A-record directly to your domain (example.com) would allow anyone to see your real IP address just by `ping example.com`. Try it!
+**Note** that the CNAME alias masks your real IP address - a fundamental advantage of CF. Naming the A-record directly as your domain (example.com) would allow anyone to see your real IP address just by `ping example.com`. Try it!
 
 **Note** that you will need to update this script:
 * If your CF Zone ID, Authorization key, or A-record ID change. Only you can change these.
