@@ -34,9 +34,9 @@ The cron job will change the A-record to your webserver IP address on it's next 
 **Note** that the CNAME alias masks your real IP address - a fundamental advantage of CF. Naming the A-record directly as your domain (example.com) would allow anyone to see your real IP address just by `ping example.com`. Try it!
 
 **Note** that you will need to update this script:
-* If your CF Zone ID, Authorization key, or A-record ID change. Only you can change these.
-* If CF API v4 is deprecated. It is currently new, so should be stable for many years.
-* If api.ipify.org is deprecated. There are many others. Or use `dig` if you like.
+* if your CF Zone ID, Authorization key, or A-record ID change. Only you can change these.
+* if CF API v4 is deprecated. It is currently new, so should be stable for many years.
+* if api.ipify.org is deprecated. There are many others. Or use `dig` if you like.
 
 **TO DO**
 * Convert curl from linux bash script to other platforms.
