@@ -23,7 +23,7 @@ echo %RECORDED_IP%
 
 REM If the public ip has not changed, nothing needs to be done, exit.
 
-if "%PUBLIC_IP%" == "%RECORDED_IP%" pause
+if "%PUBLIC_IP%" == "%RECORDED_IP%" exit 0
 
 echo %PUBLIC_IP%> %IP_RECORD%
 
