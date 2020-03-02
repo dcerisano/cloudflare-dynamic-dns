@@ -17,7 +17,7 @@ echo %PUBLIC_IP%
 
 REM Retrieve the last recorded public IP address
 
-set /p RECORDED_IP=<%IP_RECORD%
+set /p RECORDED_IP=<"%IP_RECORD%"
 
 echo %RECORDED_IP%
 
@@ -25,7 +25,7 @@ REM If the public ip has not changed, nothing needs to be done, exit.
 
 if "%PUBLIC_IP%" == "%RECORDED_IP%" exit 0
 
-echo %PUBLIC_IP%> %IP_RECORD%
+echo %PUBLIC_IP%> "%IP_RECORD%"
 
 SET RECORD= {  \"type\":  \"A\",^
    \"name\":  \"%A_RECORD_NAME%\",^
