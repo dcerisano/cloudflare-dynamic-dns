@@ -1,0 +1,4 @@
+CLOUDFLARE_KEY="hex-string" # find through CF dashboard > My Profile > API Tokens
+CLOUDFLARE_EMAIL="myemail@example.com" # CF login email
+CLOUDFLARE_ZONE_ID="hex-string" # Find from CF dashboard > *select zone in question* (e.g. example.com) > Scroll down and find 'Zone ID'
+CLOUDFLARE_RECORD_NAME="sub.example.com" # Domain name to update

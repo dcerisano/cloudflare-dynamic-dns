@@ -12,17 +12,8 @@ This is a bare bones script that requires:
 * CF API v4 service  is available
 * api.ipify.org service is available
 
-You need the Zone ID,  Authorization key and A-record ID for your domain.
+To get started, copy config.sample to config and fill in the fields
 
-**Fetch** the first two  from your CF account.
-
-**Create** the A-record in CF named "dynamic".
-
-**Create** the CNAME alias (example.com --> dynamic.example.com) 
-
-![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/cf.png)
-
-**Fetch** The A-record ID with [cloudflare-dns-id.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-dns-id.sh)
 
 **Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) as a cron job `* * * * *    /.../cloudflare-ddns.sh`
 

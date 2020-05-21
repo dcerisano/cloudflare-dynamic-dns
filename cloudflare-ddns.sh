@@ -1,10 +1,17 @@
 #/usr/bin/env sh
 
-AUTH_EMAIL=example@example.com
-AUTH_KEY=** CF Authorization  key **
-ZONE_ID=** CF Zone ID **
-A_RECORD_NAME="dynamic"
-A_RECORD_ID=** CF A-record ID from cloudflare-dns-id.sh **
+source ./config
+
+
+A_RECORD_ID=($(curl -X GET "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/dns_records?type=A&name=$CLOUDFLARE_RECORD_NAME" \
+     -H "Host: api.cloudflare.com" \
+     -H "User-Agent: ddclient/3.9.0" \
+     -H "Connection: close" \
+     -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
+     -H "X-Auth-Key: ${CLOUDFLARE_KEY}" \
+     -H "Content-Type: application/json" -s | jq -r ".result[].id"))
+
+
 
 # Retrieve the last recorded public IP address
 IP_RECORD="/tmp/ip-record"
@@ -15,7 +22,8 @@ PUBLIC_IP=$(curl --silent https://api.ipify.org) || exit 1
 
 #If the public ip has not changed, nothing needs to be done, exit.
 if [ "$PUBLIC_IP" = "$RECORDED_IP" ]; then
-    exit 0
+   echo "IP already set to $RECORDED_IP, exiting"
+   exit 0
 fi
 
 # Otherwise, your Internet provider changed your public IP again.
@@ -25,15 +33,15 @@ echo $PUBLIC_IP > $IP_RECORD
 # Record the new public IP address on Cloudflare using API v4
 RECORD=$(cat <<EOF
 { "type": "A",
-  "name": "$A_RECORD_NAME",
+  "name": "$CLOUDFLARE_RECORD_NAME",
   "content": "$PUBLIC_IP",
   "ttl": 180,
   "proxied": false }
 EOF
 )
-curl "https://api.cloudflare.com/client/v4/zones/$ZONE_ID/dns_records/$A_RECORD_ID" \
+curl "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/dns_records/$A_RECORD_ID" \
      -X PUT \
      -H "Content-Type: application/json" \
-     -H "X-Auth-Email: $AUTH_EMAIL" \
-     -H "X-Auth-Key: $AUTH_KEY" \
+     -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
+     -H "X-Auth-Key: ${CLOUDFLARE_KEY}" \
      -d "$RECORD"
