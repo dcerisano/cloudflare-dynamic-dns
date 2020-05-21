@@ -14,8 +14,11 @@ This is a bare bones script that requires:
 
 To get started, copy config.sample to config and fill in the fields
 
+**Prerequisites**
 
-**Run** [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh) as a cron job `* * * * *    /.../cloudflare-ddns.sh`
+The script requires [jq](https://stedolan.github.io/jq/download/) to parse the Cloudflare API JSON. Install for your system, e.g.: `sudo apt-get install jq` (Ubuntu/Debian) or `brew install jq` (MacOS). Or download the binary directly from https://stedolan.github.io/jq/download/
+
+**Run** To update your DNS, run [cloudflare-ddns.sh](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/cloudflare-ddns.sh). It can also be set up to run as a cron job, e.g. `* * * * *    /.../cloudflare-ddns.sh`
 
 **Test** by changing your A-record to a bogus IP and then deleting `/tmp/ip-record`
 The cron job will change the A-record to your webserver IP address on it's next run.
@@ -29,9 +32,5 @@ The cron job will change the A-record to your webserver IP address on it's next 
 * if CF API v4 is deprecated. It is currently new, so should be stable for many years.
 * if api.ipify.org is deprecated. There are many others. Or use `dig` if you like.
 
-**TO DO**
-* Convert curl from linux bash script to other platforms.
-
-**DO NOT** commit your Authorization key to GitHub - thar be dragons. Purge any such commits and change your key.
-
-![alt text](https://raw.githubusercontent.com/dcerisano/cloudflare-dynamic-dns/master/img/dragon-key.png)
+**Tested On**
+MacOS 10.14+
