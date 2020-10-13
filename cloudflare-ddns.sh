@@ -1,9 +1,7 @@
 #/usr/bin/env sh
 
-AUTH_EMAIL=example@example.com
-AUTH_KEY=** CF Authorization  key **
-ZONE_ID=** CF Zone ID **
-A_RECORD_NAME="dynamic"
+source ./config.sh
+
 A_RECORD_ID=** CF A-record ID from cloudflare-dns-id.sh **
 
 # Retrieve the last recorded public IP address
