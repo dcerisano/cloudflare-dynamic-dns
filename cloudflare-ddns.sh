@@ -8,7 +8,7 @@ A_RECORD_ID=** CF A-record ID from cloudflare-dns-id.sh **
 
 # Retrieve the last recorded public IP address
 IP_RECORD="/tmp/ip-record"
-RECORDED_IP=`cat $IP_RECORD`
+RECORDED_IP=$(cat $IP_RECORD) || true
 
 # Fetch the current public IP address
 PUBLIC_IP=$(curl --silent https://api.ipify.org) || exit 1
