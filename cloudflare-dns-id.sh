@@ -6,7 +6,7 @@
 #Create the CNAME alias (example.com --> dynamic.example.com 1)
 #Fetch The A-record ID:
 
-curl -X GET "https://api.cloudflare.com/client/v4/zones/**Zone ID**/dns_records" \
+curl -X GET "https://api.cloudflare.com/client/v4/zones/**Zone ID**/dns_records?type=A&name=dynamic.**YOUR DOMAIN**.com" \
      -H "Host: api.cloudflare.com" \
      -H "User-Agent: ddclient/3.9.0" \
      -H "Connection: close" \
