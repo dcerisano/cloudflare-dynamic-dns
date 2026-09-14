@@ -41,6 +41,7 @@ The cron job will change the A-record to your webserver IP address on it's next 
 **TO DO**
 * Convert curl from linux bash script to other platforms.
 * DONE: Windows BAT
+* Instead of public "dynamic" label for A record, use internal hash that changes on every cron tick.
 
 **DO NOT** commit your Authorization key to GitHub - thar be dragons. Purge any such commits and change your key.
 
